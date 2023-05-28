@@ -1,0 +1,37 @@
+{% extends 'cbase.html' %}
+
+{% block body %}
+<div class="card mb-2">
+    <div class="card-body">
+        <h2 class="card-header">{{ count }}</h2>
+        <p class="text-content3">Total projects you've applied for so far.</p>
+        <div>
+            <a class="btn btn-secondary" href="/explore-projects">Explore Other Projects</a>
+        </div>
+    </div>
+</div>
+{% if applications %}
+<div style="font-size: 0.9cm;" class="mb-4 mt-4">Existing Applications</div>
+{% for i in range(count) %}
+<div class="accordion-group accordion-group-bordered mb-2">
+	<div class="accordion">
+		<input type="checkbox" id="toggle-{{ i }}" class="accordion-toggle" />
+		<label for="toggle-{{ i }}" class="accordion-title">{{ applications[i][0] }}</label>
+		<div class="accordion-content text-content2">
+			<div class="min-h-0">
+                Created: {{ applications[i][1] }}<br>
+                Status:
+                {% if applications[i][2] == 0 %}
+                    Yet to be reviewed
+                {% elif application[i][2] == -1 %}
+                    Rejected
+                {% else %}
+                    Accepted
+                {% endif %}
+            </div>
+		</div>
+	</div>
+</div>
+{% endfor %}
+{% endif %}
+{% endblock body %}

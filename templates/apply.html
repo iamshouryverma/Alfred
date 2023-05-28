@@ -1,0 +1,21 @@
+{% extends 'cbase.html' %}
+
+{% block body %}
+<div style="font-size: 0.9cm;" class="mb-5">Project Details</div>
+<div style="font-size: 0.5cm;" class="mb-3">Project Name: {{ details[2] }}</div>
+<div style="font-size: 0.5cm;" class="mb-3">Company: {{ details[7] }}</div>
+<div style="font-size: 0.5cm;" class="mb-3">Tagline: {{ details[3] }}</div>
+<div style="font-size: 0.5cm;" class="mb-3">Tech Stack: {{ details[6] }}</div>
+<div style="font-size: 0.5cm;" class="mb-3">Stipend: {{ details[4] }}</div>
+<div style="font-size: 0.5cm;" class="mb-3">Description: {{ details[5] }}</div>
+<form action="/new-application/{{ pid }}" method="post">
+    <div class="form-field">
+        <label class="form-label mt-5 mb-2" style="font-size: 0.5cm">Suggested Changes (Optional)</label>
+        <div class="form-control">
+            <textarea placeholder="You can provide your suggestions here." name="suggestions" style="min-height: 2.5cm;" class="input input-primary max-w-full mb-3 pt-2"></textarea>
+        </div>
+    </div>
+    <input type="hidden" value="{{ pid }}">
+    <input class="btn btn-secondary mt-4" type="submit" style="background-color: rgb(var(--secondary)/var(--tw-bg-opacity));" value="Submit Application">
+</form>
+{% endblock body %}

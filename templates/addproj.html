@@ -1,0 +1,51 @@
+{% extends 'bbase.html' %}
+
+{% block body %}
+<div style="font-size: 1cm;" class="mb-4">Enter Project Details</div>
+
+<form class="form" method="post">
+    <div class="form-field">
+        <label class="form-label">Name</label>
+        <div class="form-control">
+            <input placeholder="Type here" name="name" type="text" class="input input-primary max-w-full mb-3" />
+        </div>
+    </div>
+    <div class="form-field">
+        <label class="form-label">Tagline</label>
+        <div class="form-control">
+            <input placeholder="Type here" name="tagline" type="text" class="input input-primary max-w-full mb-3" />
+        </div>
+    </div>
+    <div class="form-field">
+        <label class="form-label">Description</label>
+        <div class="form-control">
+            <textarea placeholder="Type here" name="desc" style="min-height: 2cm;" class="input input-primary max-w-full mb-3 pt-2"></textarea>
+        </div>
+    </div>
+    <div class="form-field">
+        <label class="form-label">Stipend</label>
+        <div class="form-control">
+            <input placeholder="In ₹" name="stipend" type="number" min="1" class="input input-primary max-w-full mb-3" />
+        </div>
+    </div>
+    <div class="form-field">
+        <label class="form-label">Tech Stack</label>
+        <div class="form-control">
+            <input placeholder="Separated by commas (For ex. - DynamoDB, TypeScript, etc.)" name="tech" type="text" class="input input-primary max-w-full mb-3" />
+        </div>
+    </div>
+    <div class="form-field">
+        <label class="form-label">Priority</label>
+        <div class="form-control">
+            <input type="radio" min="1" class="ml-1 mr-1" />
+            <label for="L1">L1</label>
+            <input type="radio" min="1" class="ml-5 mr-1" />
+            <label for="L1">L2</label>
+            <input type="radio" min="1" class="ml-5 mr-1" />
+            <label for="L1">L3</label>
+        </div>
+    </div>
+    <input class="btn btn-secondary mt-4" type="submit" style="background-color: rgb(var(--secondary)/var(--tw-bg-opacity));" value="Add Project">
+</form>
+
+{% endblock body %}

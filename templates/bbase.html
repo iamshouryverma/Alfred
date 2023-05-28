@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block sidebar %}
+<div class="flex flex-row sm:gap-10">
+    <div class="sm:w-full sm:max-w-[18rem]">
+        <input type="checkbox" id="sidebar-mobile-fixed" class="sidebar-state" />
+        <label for="sidebar-mobile-fixed" class="sidebar-overlay"></label>
+        <aside
+            class="sidebar sidebar-fixed-left sidebar-mobile h-full justify-start max-sm:fixed max-sm:-translate-x-full">
+            <section class="sidebar-title items-center p-4">
+                <div class="flex flex-col">
+                    <span>Business</span>
+                </div>
+            </section>
+            <section class="sidebar-content">
+                <nav class="menu rounded-md">
+                    <section class="menu-section px-4">
+                        <span class="menu-title">Main menu</span>
+                        <ul class="menu-items">
+                            <a href='/dashboard'>
+                                <li class="menu-item {{ dash_active }}">
+                                    <span>Dashboard</span>
+                                </li>
+                            </a>
+                            <a href='/new-project'>
+                                <li class="menu-item {{ add_active }}">
+                                    <span>Add New Project</span>
+                                </li>
+                            </a>
+                    </section>
+                </nav>
+            </section>
+            <section class="sidebar-footer justify-end bg-gray-2 pt-2">
+                <div class="divider my-0"></div>
+                <div class="dropdown z-50 flex h-fit w-full cursor-pointer hover:bg-gray-4 mb-4">
+                    <label class="whites mx-2 flex h-fit w-full cursor-pointer p-0 hover:bg-gray-4" tabindex="0">
+                        <div class="flex flex-row gap-4 p-4">
+
+                            <div class="flex flex-col">
+                                <span>{{ name }}</span>
+                            </div>
+                        </div>
+                    </label>
+                    <div class="dropdown-menu-right-top dropdown-menu ml-2">
+                        <!-- <a tabindex="-1" class="dropdown-item text-sm">Preferences</a> -->
+                        <a tabindex="-1" class="dropdown-item text-sm" href="/logout">Logout</a>
+                    </div>
+                </div>
+            </section>
+        </aside>
+    </div>
+    <div class="flex w-full flex-col p-4">
+        <div class="w-fit">
+            <label for="sidebar-mobile-fixed" class="btn-primary btn sm:hidden">Main Menu</label>
+        </div>
+{% endblock sidebar %}
+
+{% block body %}
+{% endblock body %}

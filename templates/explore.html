@@ -1,0 +1,22 @@
+{% extends 'cbase.html' %}
+
+{% block body %}
+<div class="card mb-2" style="min-width: 100%; max-width: 100%;">
+    <div class="card-body">
+        <h2 class="card-header mb-4" style="font-size: 0.9cm;">Search</h2>
+        <form>
+            <input type="text" style="min-width: 100%; max-width: 100%" class="input input-secondary" placeholder="Enter terms to search" name="search">
+            <input type="button" class="btn btn-secondary mt-5 p-3 pt-0 pb-0" value="Search" style="background-color: rgb(var(--secondary)/var(--tw-bg-opacity)); float: right;">
+        </form>
+    </div>
+</div>
+{% for project in projects %}
+<div class="card mb-2 mt-2" style="min-width: 100%; max-width: 100%;">
+    <div class="card-body">
+        <h2 class="card-header mb-4" style="font-size: 0.9cm;">{{ project[1] }}<a class="btn btn-outline-error" style="float: left" href="/new-application/{{ project[0] }}">Apply</a></h2>
+        <p class="text-content2">{{ project[2] }}</p>
+        <p class="text-content2">Stipend: ₹ {{ project[3] }}</p>
+    </div>
+</div>
+{% endfor %}
+{% endblock body %}
