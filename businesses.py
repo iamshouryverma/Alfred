@@ -3,7 +3,8 @@ from database import ConsultancyDatabase
 from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
 
 app = Flask(__name__)
-app.secret_key = "async-squad"
+app.config['SECRET_KEY'] = 'business'
+app.config['SESSION_COOKIE_NAME'] = 'business_cookie'
 app.debug = True # remove this part during actual launch
 
 DATABASE_FILENAME = 'consultancy.db'
